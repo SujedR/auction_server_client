@@ -1,0 +1,22 @@
+--- Notice client python flask
+Les fichiers json fournis avec le client peuvent servir d'exemple pour réaliser d'autres enchères.
+
+
+1) Pour envoyer la description à l'auction-server il faut utiliser le programme python auction_stater.py qui va envoyer le fichier auction.json au serveur.
+
+2) Il faut avoir lancé au préalable le client flask sur le bon port par exemple (flask run --port 8080) pour que l'enchère se réalise (voir doc flask)
+
+3) Le client python est configurable. Pour ajouter un agent il faut créer un app route à la fin comme pour ceux déjà crées et de rajouter dans la liste de
+sélection de stratégie la stratégie du nouvel agent.
+
+4) Explication des différentes méthodes :
+	- send_bid permet d'envoye à l'auction server un bid
+	- numberItemsBundles() permet de compter le nombre de bundles qu'il y aura en fonction du nombre d'objets grâce à la formule des nombres triangulaires
+	- combin(n, k) permet de déterminer le nombre de combinaisons de n objets pris k à k
+	- get_valuations() permet de calculer de récupérer toutes les valeurs pour chaque agent et de calculer les AC values.
+	- intStrat() permet d'appliquer la stratégie INT
+	- compStrat()permet d'appliquer la stratégie COMP1
+	- noStrat() fait jouer aux joueurs leurs propres valeurs privées.
+	- default_bidder(bidder_number) est le programme principal qui exécute toutes les méthodes et envoie les messages au serveur
+
+contact : raphael.dejus@ut-capitole.fr
